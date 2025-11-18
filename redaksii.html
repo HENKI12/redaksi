@@ -1,65 +1,63 @@
 <!doctype html>
 <html lang="id">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Redaksi Foto — Generator A4</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#f6f8fa;
-    --card:#ffffff;
-    --muted:#6b7280;
-    --accent:#0f172a;
-    --soft:#f3f4f6;
-    --orange:#ff7a00;
-    --radius:14px;
-  }
-  *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
-  body{margin:0;background:var(--bg);padding:28px;color:var(--accent)}
-  .wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start}
-  .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 20px rgba(15,23,42,0.06);padding:20px}
-  h2{margin:0 0 8px 0;font-size:18px}
-  .section-title{font-weight:600;color:#0f172a;margin-bottom:12px}
-  /* Editor left column */
-  .editor .photo-card{border-radius:10px;border:1px solid #eef2f7;padding:14px;background:linear-gradient(180deg,#fff,#fff);margin-bottom:18px}
-  .photo-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-  .photo-header .title{font-weight:700}
-  .auto-btn{background:transparent;border:1px solid #e6eef6;padding:6px 10px;border-radius:8px;cursor:pointer;color:#0f172a;font-weight:600;display:inline-flex;gap:8px;align-items:center}
-  .drop-area{border:2px dashed #e6eef6;border-radius:10px;min-height:160px;display:flex;align-items:center;justify-content:center;padding:10px;background:var(--soft);overflow:hidden;position:relative}
-  .drop-area img{max-width:100%;max-height:100%;object-fit:contain;display:block}
-  .upload-btn{width:100%;margin-top:12px;padding:10px;border-radius:10px;border:0;background:#f3f4f6;color:#0f172a;font-weight:700;cursor:pointer}
-  label.small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
-  textarea.ket{width:100%;min-height:70px;padding:12px;border-radius:8px;border:1px solid #eef2f7;background:#fbfdff;margin-top:8px;resize:vertical}
-  .controls-row{display:flex;gap:10px;margin-top:12px}
-  .btn-primary{background:var(--orange);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
-  .btn-ghost{background:transparent;border:1px solid #eef2f7;padding:10px 12px;border-radius:10px;cursor:pointer}
-  .muted{color:var(--muted);font-size:13px;margin-top:8px}
-
-  /* Preview right column */
-  .preview .preview-header{padding-bottom:10px;border-bottom:1px solid #eef2f7;margin-bottom:18px}
-  .preview-title{font-size:26px;font-weight:800;margin:8px 0}
-  .preview-date{color:var(--muted);margin-top:6px}
-  .divider{height:2px;background:#0f172a;margin:12px 0;border-radius:2px;opacity:0.08}
-
-  .preview-card{background:#f8fafc;border-radius:12px;padding:18px;margin-bottom:18px;display:flex;gap:18px;align-items:center;box-shadow:none;border:1px solid rgba(15,23,42,0.02)}
-  .preview-thumb{width:180px;height:110px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #eef2f7}
-  .preview-thumb img{width:100%;height:100%;object-fit:cover}
-  .preview-caption{font-size:14px;color:#0f172a}
-
-  /* Modal */
-  .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;z-index:9999}
-  .modal{width:90%;max-width:900px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
-  .modal-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eef2f7}
-  .modal-body{height:80vh;background:#fff}
-  .modal-footer{padding:12px 16px;border-top:1px solid #eef2f7;display:flex;gap:8px;justify-content:flex-end}
-  .btn {padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
-  .btn-secondary{background:#f3f4f6}
-  .btn-download{background:var(--orange);color:#fff}
-
-  /* responsive */
-  @media (max-width:980px){.wrap{grid-template-columns:1fr;padding:12px} .preview-thumb{width:150px;height:95px} .editor{order:2} .preview{order:1}}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redaksi Foto — Generator A4</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fa;
+      --card:#ffffff;
+      --muted:#6b7280;
+      --accent:#0f172a;
+      --soft:#f3f4f6;
+      --orange:#ff7a00;
+      --radius:14px;
+    }
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;}
+    body{margin:0;background:var(--bg);padding:28px;color:var(--accent)}
+    .wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:420px 1fr;gap:24px;align-items:start}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:0 6px 20px rgba(15,23,42,0.06);padding:20px}
+    h2{margin:0 0 8px 0;font-size:18px}
+    .section-title{font-weight:600;color:#0f172a;margin-bottom:12px}
+    /* Editor left column */
+    .editor .photo-card{border-radius:10px;border:1px solid #eef2f7;padding:14px;background:linear-gradient(180deg,#fff,#fff);margin-bottom:18px}
+    .photo-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .photo-header .title{font-weight:700}
+    .auto-btn{background:transparent;border:1px solid #e6eef6;padding:6px 10px;border-radius:8px;cursor:pointer;color:#0f172a;font-weight:600;display:inline-flex;gap:8px;align-items:center}
+    .drop-area{border:2px dashed #e6eef6;border-radius:10px;min-height:160px;display:flex;align-items:center;justify-content:center;padding:10px;background:var(--soft);overflow:hidden;position:relative}
+    .drop-area img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+    .drop-area.small{min-height:120px}
+    .upload-btn{width:100%;margin-top:12px;padding:10px;border-radius:10px;border:0;background:#f3f4f6;color:#0f172a;font-weight:700;cursor:pointer}
+    label.small{display:block;margin-top:12px;color:var(--muted);font-size:13px}
+    textarea.ket{width:100%;min-height:70px;padding:12px;border-radius:8px;border:1px solid #eef2f7;background:#fbfdff;margin-top:8px;resize:vertical}
+    input.ket{width:100%;height:44px;padding:12px;border-radius:8px;border:1px solid #eef2f7;background:#fbfdff;margin-top:8px}
+    .controls-row{display:flex;gap:10px;margin-top:12px}
+    .btn-primary{background:var(--orange);color:#fff;padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    .btn-ghost{background:transparent;border:1px solid #eef2f7;padding:10px 12px;border-radius:10px;cursor:pointer}
+    .muted{color:var(--muted);font-size:13px;margin-top:8px}
+    /* Preview right column */
+    .preview .preview-header{padding-bottom:10px;border-bottom:1px solid #eef2f7;margin-bottom:18px}
+    .preview-title{font-size:26px;font-weight:800;margin:8px 0}
+    .preview-date{color:var(--muted);margin-top:6px}
+    .divider{height:2px;background:#0f172a;margin:12px 0;border-radius:2px;opacity:0.08}
+    .preview-card{background:#f8fafc;border-radius:12px;padding:18px;margin-bottom:18px;display:flex;gap:18px;align-items:center;box-shadow:none;border:1px solid rgba(15,23,42,0.02)}
+    .preview-thumb{width:180px;height:110px;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #eef2f7}
+    .preview-thumb img{width:100%;height:100%;object-fit:cover}
+    .preview-caption{font-size:14px;color:#0f172a}
+    /* Modal */
+    .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:none;align-items:center;justify-content:center;z-index:9999}
+    .modal{width:90%;max-width:900px;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,0.3)}
+    .modal-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid #eef2f7}
+    .modal-body{height:80vh;background:#fff}
+    .modal-footer{padding:12px 16px;border-top:1px solid #eef2f7;display:flex;gap:8px;justify-content:flex-end}
+    .btn {padding:8px 12px;border-radius:8px;border:0;cursor:pointer}
+    .btn-secondary{background:#f3f4f6}
+    .btn-download{background:var(--orange);color:#fff}
+    /* responsive */
+    @media (max-width:980px){.wrap{grid-template-columns:1fr;padding:12px} .preview-thumb{width:150px;height:95px} .editor{order:2} .preview{order:1}}
+  </style>
 </head>
 <body>
 <div class="wrap">
@@ -68,35 +66,54 @@
     <h2>Foto dan Keterangan</h2>
     <p class="muted">Unggah foto, tambahkan keterangan. Gunakan tombol <strong>Auto-isi</strong> untuk mengisi keterangan otomatis dari nama file atau contoh teks.</p>
 
+    <!-- BARU: Pengaturan Judul & Tanggal -->
+    <div class="section-title" style="margin-top:24px;">Pengaturan Dokumen</div>
+    <div class="photo-card">
+      <label class="small">Judul</label>
+      <input type="text" id="docTitle" class="ket" placeholder="Masukkan judul..."/>
+      <label class="small" style="margin-top:12px;">Tanggal</label>
+      <input type="date" id="docDate" class="ket"/>
+    </div>
+
+    <!-- BARU: Upload Logo -->
+    <div class="section-title">Logo (pojok kanan atas PDF)</div>
+    <div class="photo-card">
+      <div class="photo-header">
+        <div class="title">Logo</div>
+      </div>
+      <div class="drop-area small" id="dropLogo" onclick="triggerLogoUpload()">
+        <span id="placeholderLogo" class="muted">Klik atau seret logo ke sini</span>
+        <img id="imgLogo" style="display:none" alt="Logo preview"/>
+      </div>
+      <input type="file" id="fileLogo" accept="image/*" style="display:none" onchange="handleLogo(event)"/>
+      <button class="upload-btn" onclick="triggerLogoUpload()">⬆ Upload Logo</button>
+    </div>
+
     <!-- Photo blocks (3) -->
     <div id="photosContainer"></div>
-
     <div class="controls-row">
       <button class="btn-primary" onclick="preparePdfPreview()">Export PDF (A4)</button>
       <button class="btn-ghost" onclick="previewNow()">Perbarui Preview</button>
       <button class="btn-ghost" onclick="clearAll()">Reset</button>
     </div>
-
     <div class="muted" style="margin-top:12px">Catatan: PDF akan diunduh dalam ukuran A4 portrait. Gambar mempertahankan rasio asli dan akan diskalakan agar 3 foto + keterangan muat satu halaman.</div>
   </div>
-
   <!-- Preview -->
   <div class="card preview">
     <div class="preview-header">
       <div class="section-title">Preview</div>
       <div style="display:flex;align-items:center;gap:12px">
         <div>
-          <div class="preview-title" id="previewTitle">Redaksi Foto</div>
+          <div class="preview-title" id="previewTitle"></div>
           <div class="preview-date" id="previewDate"></div>
         </div>
+        <img id="previewLogo" style="max-height:60px;display:none;margin-left:auto" alt="Logo"/>
       </div>
       <div class="divider"></div>
     </div>
-
     <div id="previewList"></div>
   </div>
 </div>
-
 <!-- Modal for preview -->
 <div class="modal-backdrop" id="pdfModal">
   <div class="modal" role="dialog" aria-modal="true" aria-label="Preview PDF">
@@ -113,28 +130,27 @@
     </div>
   </div>
 </div>
-
 <!-- jsPDF -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-/* ---------- STATE ---------- */
-const state = {
-  items: [
-    { img: null, file: null, cap: '' },
-    { img: null, file: null, cap: '' },
-    { img: null, file: null, cap: '' }
-  ],
-  title: 'Redaksi Foto',
-  date: new Date().toISOString().slice(0,10),
-  lastPdfBlob: null
-};
-
-/* ---------- UI Init: build 3 photo blocks ---------- */
-const photosContainer = document.getElementById('photosContainer');
-for(let i=0;i<3;i++){
-  const div = document.createElement('div');
-  div.className = 'photo-card';
-  div.innerHTML = `
+  /* ---------- STATE ---------- */
+  const state = {
+    items: [
+      { img: null, file: null, cap: '' },
+      { img: null, file: null, cap: '' },
+      { img: null, file: null, cap: '' }
+    ],
+    title: 'Redaksi Foto',
+    date: new Date().toISOString().slice(0,10),
+    logo: null,
+    lastPdfBlob: null
+  };
+  /* ---------- UI Init: build 3 photo blocks ---------- */
+  const photosContainer = document.getElementById('photosContainer');
+  for(let i=0;i<3;i++){
+    const div = document.createElement('div');
+    div.className = 'photo-card';
+    div.innerHTML = `
     <div class="photo-header">
       <div class="title">Foto ${i+1}</div>
       <button class="auto-btn" onclick="autoFill(${i})" title="Auto-isi keterangan">🔧 Auto-isi</button>
@@ -148,332 +164,359 @@ for(let i=0;i<3;i++){
     <label class="small">Keterangan</label>
     <textarea id="cap${i}" class="ket" placeholder="Tulis keterangan foto ${i+1}..."></textarea>
   `;
-  photosContainer.appendChild(div);
-
-  // add listeners for caption changes
-  (function(index){
-    setTimeout(()=>{
-      document.getElementById('cap'+index).addEventListener('input', (e)=>{
-        state.items[index].cap = e.target.value;
-        renderPreview();
-      });
-    },0);
-  })(i);
-}
-
-/* ---------- Helpers ---------- */
-function triggerUpload(i){ document.getElementById('file'+i).click(); }
-
-function handleFile(e,i){
-  const f = e.target.files[0];
-  if(!f) return;
-  state.items[i].file = f;
-  const reader = new FileReader();
-  reader.onload = function(ev){
-    state.items[i].img = ev.target.result;
-    document.getElementById('img'+i).src = state.items[i].img;
-    document.getElementById('img'+i).style.display = 'block';
-    document.getElementById('placeholder'+i).style.display = 'none';
-    // fill caption from filename if empty
-    const name = f.name.replace(/\.[^/.]+$/, '').replace(/[_-]/g,' ');
-    const capEl = document.getElementById('cap'+i);
-    if(!capEl.value) capEl.value = capitalizeFirst(name);
-    state.items[i].cap = capEl.value;
-    renderPreview();
-  };
-  reader.readAsDataURL(f);
-}
-
-function capitalizeFirst(s){ if(!s) return ''; return s.charAt(0).toUpperCase() + s.slice(1); }
-
-function autoFill(i){
-  const capEl = document.getElementById('cap'+i);
-  if(capEl.value && capEl.value.trim().length>5){
-    capEl.value = ''; state.items[i].cap = ''; renderPreview(); return;
+    photosContainer.appendChild(div);
+    // caption change listener
+    (function(index){
+      setTimeout(()=>{
+        document.getElementById('cap'+index).addEventListener('input', (e)=>{
+          state.items[index].cap = e.target.value;
+          renderPreview();
+        });
+      },0);
+    })(i);
   }
-  if(state.items[i].file){
-    const name = state.items[i].file.name.replace(/\.[^/.]+$/, '').replace(/[_-]/g,' ');
-    capEl.value = capitalizeFirst(name) + '.';
-  } else {
-    const samples = [
-      'Pemandangan gunung yang indah di pagi hari dengan kabut tipis menyelimuti lembah.',
-      'Hutan lebat dengan pepohonan tinggi yang memberikan suasana damai dan asri.',
-      'Jalan setapak di tengah hutan yang dikelilingi sinar mentari melalui dedaunan.'
-    ];
-    capEl.value = samples[i] || 'Keterangan foto.';
-  }
-  state.items[i].cap = capEl.value;
-  renderPreview();
-}
 
-/* ---------- Drag & Drop ---------- */
-for(let i=0;i<3;i++){
-  const drop = document.getElementById('drop'+i);
-  drop.addEventListener('dragover', (e)=>{ e.preventDefault(); drop.style.borderColor='#cbd5e1'; });
-  drop.addEventListener('dragleave', ()=>{ drop.style.borderColor='#e6eef6'; });
-  drop.addEventListener('drop', (e)=>{
+  /* ---------- BARU: Judul, Tanggal & Logo listeners ---------- */
+  setTimeout(()=>{
+    document.getElementById('docTitle').value = state.title;
+    document.getElementById('docDate').value = state.date;
+    document.getElementById('docTitle').addEventListener('input', e => { state.title = e.target.value; renderPreview(); });
+    document.getElementById('docDate').addEventListener('change', e => { state.date = e.target.value; renderPreview(); });
+  },0);
+
+  function triggerLogoUpload(){ document.getElementById('fileLogo').click(); }
+  function handleLogo(e){
+    const f = e.target.files[0];
+    if(!f) return;
+    const reader = new FileReader();
+    reader.onload = function(ev){
+      state.logo = ev.target.result;
+      document.getElementById('imgLogo').src = state.logo;
+      document.getElementById('imgLogo').style.display = 'block';
+      document.getElementById('placeholderLogo').style.display = 'none';
+      renderPreview();
+    };
+    reader.readAsDataURL(f);
+  }
+
+  /* ---------- Drag & Drop untuk foto (loop) ---------- */
+  for(let i=0;i<3;i++){
+    const drop = document.getElementById('drop'+i);
+    drop.addEventListener('dragover', (e)=>{ e.preventDefault(); drop.style.borderColor='#cbd5e1'; });
+    drop.addEventListener('dragleave', ()=>{ drop.style.borderColor='#e6eef6'; });
+    drop.addEventListener('drop', (e)=>{
+      e.preventDefault();
+      const f = e.dataTransfer.files[0];
+      if(f){
+        const input = document.getElementById('file'+i);
+        const dt = new DataTransfer();
+        dt.items.add(f);
+        input.files = dt.files;
+        handleFile({ target: { files: input.files } }, i);
+      }
+    });
+  }
+
+  /* ---------- Drag & Drop untuk logo ---------- */
+  const dropLogo = document.getElementById('dropLogo');
+  dropLogo.addEventListener('dragover', (e)=>{ e.preventDefault(); dropLogo.style.borderColor='#cbd5e1'; });
+  dropLogo.addEventListener('dragleave', ()=>{ dropLogo.style.borderColor='#e6eef6'; });
+  dropLogo.addEventListener('drop', (e)=>{
     e.preventDefault();
+    dropLogo.style.borderColor='#e6eef6';
     const f = e.dataTransfer.files[0];
-    if(f){
-      const input = document.getElementById('file'+i);
-      // Create a DataTransfer to set files programmatically
+    if(f && f.type.startsWith('image/')){
+      const input = document.getElementById('fileLogo');
       const dt = new DataTransfer();
       dt.items.add(f);
       input.files = dt.files;
-      handleFile({ target: { files: input.files } }, i);
+      handleLogo({target: {files: input.files}});
     }
   });
-}
 
-/* ---------- Preview rendering ---------- */
-function renderPreview(){
-  const list = document.getElementById('previewList');
-  list.innerHTML = '';
-  document.getElementById('previewDate').textContent = formatDate(state.date);
-  for(let i=0;i<3;i++){
-    const card = document.createElement('div');
-    card.className = 'preview-card';
-    const thumb = document.createElement('div');
-    thumb.className = 'preview-thumb';
-    const img = document.createElement('img');
-    if(state.items[i].img){ img.src = state.items[i].img; img.style.opacity = 1; } else { img.src=''; img.style.opacity = 0; }
-    thumb.appendChild(img);
-    const cap = document.createElement('div');
-    cap.className = 'preview-caption';
-    cap.innerHTML = `<strong>Foto ${i+1}:</strong> ${state.items[i].cap || ''}`;
-    card.appendChild(thumb);
-    card.appendChild(cap);
-    list.appendChild(card);
+  /* ---------- Helpers foto ---------- */
+  function triggerUpload(i){ document.getElementById('file'+i).click(); }
+  function handleFile(e,i){
+    const f = e.target.files[0];
+    if(!f) return;
+    state.items[i].file = f;
+    const reader = new FileReader();
+    reader.onload = function(ev){
+      state.items[i].img = ev.target.result;
+      document.getElementById('img'+i).src = state.items[i].img;
+      document.getElementById('img'+i).style.display = 'block';
+      document.getElementById('placeholder'+i).style.display = 'none';
+      const name = f.name.replace(/\.[^/.]+$/, '').replace(/[_-]/g,' ');
+      const capEl = document.getElementById('cap'+i);
+      if(!capEl.value) capEl.value = capitalizeFirst(name);
+      state.items[i].cap = capEl.value;
+      renderPreview();
+    };
+    reader.readAsDataURL(f);
   }
-}
-function previewNow(){ renderPreview(); }
-
-/* ---------- Reset ---------- */
-function clearAll(){
-  for(let i=0;i<3;i++){
-    state.items[i] = { img: null, file: null, cap: '' };
-    document.getElementById('img'+i).style.display='none';
-    document.getElementById('img'+i).src='';
-    document.getElementById('placeholder'+i).style.display='block';
-    document.getElementById('cap'+i).value='';
+  function capitalizeFirst(s){ if(!s) return ''; return s.charAt(0).toUpperCase() + s.slice(1); }
+  function autoFill(i){
+    const capEl = document.getElementById('cap'+i);
+    if(capEl.value && capEl.value.trim().length>5){
+      capEl.value = ''; state.items[i].cap = ''; renderPreview(); return;
+    }
+    if(state.items[i].file){
+      const name = state.items[i].file.name.replace(/\.[^/.]+$/, '').replace(/[_-]/g,' ');
+      capEl.value = capitalizeFirst(name) + '.';
+    } else {
+      const samples = [
+        'Pemandangan gunung yang indah di pagi hari dengan kabut tipis menyelimuti lembah.',
+        'Hutan lebat dengan pepohonan tinggi yang memberikan suasana damai dan asri.',
+        'Jalan setapak di tengah hutan yang dikelilingi sinar mentari melalui dedaunan.'
+      ];
+      capEl.value = samples[i] || 'Keterangan foto.';
+    }
+    state.items[i].cap = capEl.value;
+    renderPreview();
   }
-  state.date = new Date().toISOString().slice(0,10);
-  state.lastPdfBlob = null;
-  renderPreview();
-}
 
-/* ---------- Date formatting ---------- */
-function formatDate(d){
-  if(!d) return '';
-  const date = new Date(d);
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
-  return date.toLocaleDateString('id-ID', options);
-}
+  /* ---------- Preview rendering ---------- */
+  function renderPreview(){
+    document.getElementById('previewTitle').textContent = state.title || 'Redaksi Foto';
+    document.getElementById('previewDate').textContent = formatDate(state.date);
+    if(state.logo){
+      document.getElementById('previewLogo').src = state.logo;
+      document.getElementById('previewLogo').style.display = 'block';
+    } else {
+      document.getElementById('previewLogo').style.display = 'none';
+    }
+    const list = document.getElementById('previewList');
+    list.innerHTML = '';
+    for(let i=0;i<3;i++){
+      const card = document.createElement('div');
+      card.className = 'preview-card';
+      const thumb = document.createElement('div');
+      thumb.className = 'preview-thumb';
+      const img = document.createElement('img');
+      if(state.items[i].img){ img.src = state.items[i].img; }
+      thumb.appendChild(img);
+      const cap = document.createElement('div');
+      cap.className = 'preview-caption';
+      cap.innerHTML = `<strong>Foto ${i+1}:</strong> ${state.items[i].cap || ''}`;
+      card.appendChild(thumb);
+      card.appendChild(cap);
+      list.appendChild(card);
+    }
+  }
+  function previewNow(){ renderPreview(); }
 
-/* ---------- PDF generation & preview modal ---------- */
-async function preparePdfPreview(){
-  // generate PDF blob then show modal with iframe preview
-  const blob = await createPdfBlob();
-  if(!blob) { alert('Tidak ada isi untuk di-export.'); return; }
-  state.lastPdfBlob = blob;
-  showPdfModal(blob);
-}
+  /* ---------- Reset ---------- */
+  function clearAll(){
+    for(let i=0;i<3;i++){
+      state.items[i] = { img: null, file: null, cap: '' };
+      document.getElementById('img'+i).style.display='none';
+      document.getElementById('img'+i).src='';
+      document.getElementById('placeholder'+i).style.display='block';
+      document.getElementById('cap'+i).value='';
+    }
+    state.title = 'Redaksi Foto';
+    state.date = new Date().toISOString().slice(0,10);
+    state.logo = null;
+    document.getElementById('docTitle').value = state.title;
+    document.getElementById('docDate').value = state.date;
+    document.getElementById('imgLogo').style.display='none';
+    document.getElementById('imgLogo').src='';
+    document.getElementById('placeholderLogo').style.display='block';
+    state.lastPdfBlob = null;
+    renderPreview();
+  }
 
-function showPdfModal(blob){
-  const modal = document.getElementById('pdfModal');
-  const body = document.getElementById('modalBody');
-  body.innerHTML = '';
-  const iframe = document.createElement('iframe');
-  iframe.style.width = '100%';
-  iframe.style.height = '100%';
-  iframe.style.border = '0';
-  const url = URL.createObjectURL(blob);
-  iframe.src = url;
-  body.appendChild(iframe);
-  // set download button handler
-  const dlBtn = document.getElementById('modalDownloadBtn');
-  dlBtn.onclick = ()=> downloadBlob(blob, 'redaksi_foto.pdf');
-  // show modal
-  modal.style.display = 'flex';
-}
+  /* ---------- Date formatting ---------- */
+  function formatDate(d){
+    if(!d) return '';
+    const date = new Date(d);
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('id-ID', options);
+  }
 
-function closeModal(){
-  const modal = document.getElementById('pdfModal');
-  modal.style.display = 'none';
-  // revoke object URLs inside iframe to free memory
-  const iframe = document.querySelector('#modalBody iframe');
-  if(iframe && iframe.src.startsWith('blob:')) URL.revokeObjectURL(iframe.src);
-  document.getElementById('modalBody').innerHTML = '';
-}
+  /* ---------- PDF generation & preview modal ---------- */
+  async function preparePdfPreview(){
+    const blob = await createPdfBlob();
+    if(!blob) { alert('Tidak ada isi untuk di-export.'); return; }
+    state.lastPdfBlob = blob;
+    showPdfModal(blob);
+  }
+  function showPdfModal(blob){
+    const modal = document.getElementById('pdfModal');
+    const body = document.getElementById('modalBody');
+    body.innerHTML = '';
+    const iframe = document.createElement('iframe');
+    iframe.style.width = '100%';
+    iframe.style.height = '100%';
+    iframe.style.border = '0';
+    const url = URL.createObjectURL(blob);
+    iframe.src = url;
+    body.appendChild(iframe);
+    const dlBtn = document.getElementById('modalDownloadBtn');
+    dlBtn.onclick = ()=> downloadBlob(blob, 'redaksi_foto.pdf');
+    modal.style.display = 'flex';
+  }
+  function closeModal(){
+    const modal = document.getElementById('pdfModal');
+    modal.style.display = 'none';
+    const iframe = document.querySelector('#modalBody iframe');
+    if(iframe && iframe.src.startsWith('blob:')) URL.revokeObjectURL(iframe.src);
+    document.getElementById('modalBody').innerHTML = '';
+  }
+  function printIframe(){
+    const iframe = document.querySelector('#modalBody iframe');
+    if(!iframe) return;
+    iframe.contentWindow.print();
+  }
 
-function printIframe(){
-  const iframe = document.querySelector('#modalBody iframe');
-  if(!iframe) return;
-  iframe.contentWindow.print();
-}
+  /* ---------- Create PDF as Blob ---------- */
+  async function createPdfBlob(){
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
+    const pageWidth = pdf.internal.pageSize.getWidth();
+    const pageHeight = pdf.internal.pageSize.getHeight();
+    const margin = 40;
+    let cursorY = 70; // sedikit lebih bawah agar logo muat di atas
 
-/* ---------- Create PDF as Blob using jsPDF ---------- */
-async function createPdfBlob(){
-  const { jsPDF } = window.jspdf;
-  const pdf = new jsPDF({ unit: 'pt', format: 'a4', orientation: 'portrait' });
-  const pageWidth = pdf.internal.pageSize.getWidth(); // ~595.28
-  const pageHeight = pdf.internal.pageSize.getHeight(); // ~841.89
-  const margin = 40; // safe margin
-  let cursorY = 40;
+    // BARU: Logo di pojok kanan atas
+    if(state.logo){
+      const logoData = await imageToJpegDataURL(state.logo, 500);
+      if(logoData){
+        const logoSize = await getImageSize(logoData);
+        const maxDim = 80;
+        const ratio = Math.min(maxDim / logoSize.width, maxDim / logoSize.height, 1);
+        const lW = logoSize.width * ratio;
+        const lH = logoSize.height * ratio;
+        const lX = pageWidth - margin - lW;
+        const lY = 30;
+        pdf.addImage(logoData, 'JPEG', lX, lY, lW, lH);
+      }
+    }
 
-  // Title
-  pdf.setFontSize(22);
-  pdf.setFont('helvetica','bold');
-  pdf.text(state.title || 'Redaksi Foto', margin, cursorY);
-  cursorY += 26;
+    // Judul
+    pdf.setFontSize(22);
+    pdf.setFont('helvetica','bold');
+    pdf.text(state.title || 'Redaksi Foto', margin, cursorY);
+    cursorY += 30;
 
-  // Date
-  pdf.setFontSize(12);
-  pdf.setFont('helvetica','normal');
-  pdf.setTextColor(100);
-  pdf.text(formatDate(state.date), margin, cursorY);
-  cursorY += 18;
+    // Tanggal
+    pdf.setFontSize(12);
+    pdf.setFont('helvetica','normal');
+    pdf.setTextColor(100);
+    pdf.text(formatDate(state.date), margin, cursorY);
+    cursorY += 25;
 
-  // divider
-  pdf.setDrawColor(30,30,30);
-  pdf.setLineWidth(0.6);
-  pdf.line(margin, cursorY, pageWidth - margin, cursorY);
-  cursorY += 16;
+    // Garis pemisah
+    pdf.setDrawColor(30,30,30);
+    pdf.setLineWidth(0.6);
+    pdf.line(margin, cursorY, pageWidth - margin, cursorY);
+    cursorY += 20;
 
-  // compute available height for 3 cards
-  const remaining = pageHeight - cursorY - margin;
-  // reserve for spacing between cards (16 pts each)
-  const spacing = 16;
-  // reserve for caption heights estimate (we'll split text but prepare space)
-  const captionReserve = 60; // per card approximate
-  const perCardMaxHeight = Math.floor((remaining - spacing*2) / 3);
+    // 3 kartu foto
+    const remaining = pageHeight - cursorY - margin;
+    const spacing = 16;
+    const captionReserve = 60;
+    const perCardMaxHeight = Math.floor((remaining - spacing*2) / 3);
 
-  // for each item add card
-  for(let i=0;i<3;i++){
-    const cardTop = cursorY + 8;
-    const cardPadding = 10;
-    const cardWidth = pageWidth - margin*2;
-    const cardHeightMax = perCardMaxHeight; // available for image+caption in this card
+    for(let i=0;i<3;i++){
+      const cardTop = cursorY + 8;
+      const cardPadding = 10;
+      const cardWidth = pageWidth - margin*2;
+      const cardHeightMax = perCardMaxHeight;
 
-    // draw light background rounded rect
-    roundRect(pdf, margin, cardTop, cardWidth, cardHeightMax, 8, '#f8fafc', '#e9eef4');
+      roundRect(pdf, margin, cardTop, cardWidth, cardHeightMax, 8, '#f8fafc', '#e9eef4');
 
-    // draw image if exists
-    if(state.items[i].img){
-      // convert to JPEG data (controlled size)
-      const imgData = await imageToJpegDataURL(state.items[i].img, 1600);
-      if(imgData){
-        const imgSize = await getImageSize(imgData);
-        // compute available area for image inside card (subtract captionReserve)
-        const availW = cardWidth - cardPadding*2;
-        const availH = cardHeightMax - captionReserve - cardPadding*2;
-        // maintain aspect ratio
-        const ratio = Math.min(availW / imgSize.width, availH / imgSize.height, 1);
-        const drawW = Math.round(imgSize.width * ratio);
-        const drawH = Math.round(imgSize.height * ratio);
-        const imgX = margin + (cardWidth - drawW) / 2;
-        const imgY = cardTop + cardPadding;
-        try {
+      if(state.items[i].img){
+        const imgData = await imageToJpegDataURL(state.items[i].img, 1600);
+        if(imgData){
+          const imgSize = await getImageSize(imgData);
+          const availW = cardWidth - cardPadding*2;
+          const availH = cardHeightMax - captionReserve - cardPadding*2;
+          const ratio = Math.min(availW / imgSize.width, availH / imgSize.height, 1);
+          const drawW = Math.round(imgSize.width * ratio);
+          const drawH = Math.round(imgSize.height * ratio);
+          const imgX = margin + (cardWidth - drawW) / 2;
+          const imgY = cardTop + cardPadding;
           pdf.addImage(imgData, 'JPEG', imgX, imgY, drawW, drawH);
-        } catch(e){
-          // fallback: skip image
+          cursorY = imgY + drawH + 8;
+        } else {
+          cursorY = cardTop + 80;
         }
-        cursorY = imgY + drawH + 8;
       } else {
         cursorY = cardTop + 80;
       }
-    } else {
-      cursorY = cardTop + 80;
-    }
 
-    // caption
-    const capText = state.items[i].cap || '';
-    pdf.setFontSize(11);
-    pdf.setTextColor(40);
-    const capMaxWidth = cardWidth - cardPadding*2;
-    const captionLines = pdf.splitTextToSize(`Foto ${i+1}: ${capText}`, capMaxWidth);
-    // Ensure caption doesn't overflow below card's bottom; if too long, reduce font a bit
-    let extraHeight = captionLines.length * 14;
-    if(cardTop + (cardHeightMax) < cursorY + extraHeight + 12){
-      // not enough space inside card => allow caption to flow but will push cursorY
-    }
-    pdf.text(captionLines, margin + cardPadding, cursorY + 12);
-    cursorY += extraHeight + 20;
+      // Keterangan
+      const capText = state.items[i].cap || '';
+      pdf.setFontSize(11);
+      pdf.setTextColor(40);
+      const capMaxWidth = cardWidth - cardPadding*2;
+      const captionLines = pdf.splitTextToSize(`Foto ${i+1}: ${capText}`, capMaxWidth);
+      const extraHeight = captionLines.length * 14;
+      pdf.text(captionLines, margin + cardPadding, cursorY + 12);
+      cursorY += extraHeight + 20;
+      cursorY += spacing;
 
-    // next card spacing
-    cursorY += spacing;
-
-    // if cursorY near bottom, but algorithm ensures 3 cards fit; still check
-    if(cursorY > pageHeight - margin - 20 && i < 2){
-      pdf.addPage();
-      cursorY = 40;
+      if(cursorY > pageHeight - margin - 20 && i < 2){
+        pdf.addPage();
+        cursorY = 40;
+      }
     }
+    return pdf.output('blob');
   }
 
-  // generate blob
-  const blob = pdf.output('blob');
-  return blob;
-}
-
-/* ---------- Utilities: convert image dataURL to JPEG dataURL ---------- */
-function imageToJpegDataURL(dataUrl, maxWidth){
-  return new Promise((resolve)=>{
-    const img = new Image();
-    img.onload = function(){
-      // some browsers require crossOrigin for toDataURL; since we use local dataURLs it's fine
-      const ratio = Math.min(1, maxWidth / img.width);
-      const canvas = document.createElement('canvas');
-      canvas.width = Math.round(img.width * ratio);
-      canvas.height = Math.round(img.height * ratio);
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#ffffff';
-      ctx.fillRect(0,0,canvas.width,canvas.height);
-      ctx.drawImage(img,0,0,canvas.width,canvas.height);
-      const jpg = canvas.toDataURL('image/jpeg', 0.92);
-      resolve(jpg);
-    };
-    img.onerror = function(){ resolve(null); };
-    img.src = dataUrl;
-  });
-}
-
-function getImageSize(dataUrl){
-  return new Promise((resolve)=>{
-    const img = new Image();
-    img.onload = function(){ resolve({ width: img.naturalWidth, height: img.naturalHeight }); };
-    img.onerror = function(){ resolve({ width: 0, height: 0 }); };
-    img.src = dataUrl;
-  });
-}
-
-function roundRect(pdf, x, y, w, h, r, fillColor, strokeColor){
-  function hexToRgb(hex){ const c = hex.replace('#',''); return {r:parseInt(c.substring(0,2),16), g:parseInt(c.substring(2,4),16), b:parseInt(c.substring(4,6),16)}; }
-  if(fillColor){
-    const c = hexToRgb(fillColor);
-    pdf.setFillColor(c.r, c.g, c.b);
+  /* ---------- Utilities ---------- */
+  function imageToJpegDataURL(dataUrl, maxWidth){
+    return new Promise((resolve)=>{
+      const img = new Image();
+      img.onload = function(){
+        const ratio = Math.min(1, maxWidth / img.width);
+        const canvas = document.createElement('canvas');
+        canvas.width = Math.round(img.width * ratio);
+        canvas.height = Math.round(img.height * ratio);
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.drawImage(img,0,0,canvas.width,canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.92));
+      };
+      img.onerror = ()=>{ resolve(null); };
+      img.src = dataUrl;
+    });
   }
-  if(strokeColor){
-    const s = hexToRgb(strokeColor);
-    pdf.setDrawColor(s.r, s.g, s.b);
-  } else { pdf.setDrawColor(0,0,0); }
-  pdf.roundedRect(x, y, w, h, r, r, 'FD');
-}
+  function getImageSize(dataUrl){
+    return new Promise((resolve)=>{
+      const img = new Image();
+      img.onload = ()=>{ resolve({ width: img.naturalWidth, height: img.naturalHeight }); };
+      img.onerror = ()=>{ resolve({ width: 0, height: 0 }); };
+      img.src = dataUrl;
+    });
+  }
+  function roundRect(pdf, x, y, w, h, r, fillColor, strokeColor){
+    function hexToRgb(hex){ const c = hex.replace('#',''); return {r:parseInt(c.substring(0,2),16), g:parseInt(c.substring(2,4),16), b:parseInt(c.substring(4,6),16)}; }
+    if(fillColor){
+      const c = hexToRgb(fillColor);
+      pdf.setFillColor(c.r, c.g, c.b);
+    }
+    if(strokeColor){
+      const s = hexToRgb(strokeColor);
+      pdf.setDrawColor(s.r, s.g, s.b);
+    }
+    pdf.roundedRect(x, y, w, h, r, r, 'FD');
+  }
+  function downloadBlob(blob, filename){
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=> URL.revokeObjectURL(url), 1000);
+  }
 
-/* ---------- Download helper ---------- */
-function downloadBlob(blob, filename){
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(()=> URL.revokeObjectURL(url), 1000);
-}
-
-/* ---------- Initial render ---------- */
-renderPreview();
-
+  /* ---------- Initial render ---------- */
+  renderPreview();
 </script>
 </body>
 </html>
