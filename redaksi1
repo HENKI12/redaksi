@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumentasi Kegiatan Pemda</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background: #145A32;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    h2 {
+        border-left: 5px solid #145A32;
+        padding-left: 10px;
+    }
+    .info p {
+        line-height: 1.6;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .gallery img {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #ddd;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+    }
+    table th, table td {
+        border: 1px solid #999;
+        padding: 10px;
+        text-align: left;
+    }
+    table th {
+        background: #ddd;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <h1>DOKUMENTASI KEGIATAN PEMERINTAH DAERAH</h1>
+</div>
+
+<div class="container">
+
+    <!-- Bagian Informasi Kegiatan -->
+    <h2>Informasi Kegiatan</h2>
+    <div class="info">
+        <p><strong>Nama Kegiatan:</strong> Program Pembersihan Sungai Belidak</p>
+        <p><strong>Tanggal:</strong> 17 November 2025</p>
+        <p><strong>Lokasi:</strong> Desa Sungai Belidak, Kec. Sungai Kakap</p>
+        <p><strong>Penanggung Jawab:</strong> Dinas Lingkungan Hidup Kabupaten Kubu Raya</p>
+        <p><strong>Deskripsi:</strong> Kegiatan ini dilakukan untuk menjaga kebersihan sungai dan meningkatkan kesadaran masyarakat terhadap pentingnya menjaga lingkungan.</p>
+    </div>
+
+    <!-- Foto Kegiatan -->
+    <h2>Galeri Dokumentasi</h2>
+    <div class="gallery">
+        <img src="foto1.jpg" alt="Foto kegiatan 1">
+        <img src="foto2.jpg" alt="Foto kegiatan 2">
+        <img src="foto3.jpg" alt="Foto kegiatan 3">
+        <img src="foto4.jpg" alt="Foto kegiatan 4">
+    </div>
+
+    <!-- Rincian Kegiatan -->
+    <h2>Rincian Pelaksanaan</h2>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Waktu</th>
+            <th>Kegiatan</th>
+            <th>Pelaksana</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>08.00 - 09.00</td>
+            <td>Briefing & Pembagian Tim</td>
+            <td>Koordinator Lapangan</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>09.00 - 12.00</td>
+            <td>Pembersihan Sampah Sungai</td>
+            <td>Petugas DLH & Relawan</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>12.00 - 13.00</td>
+            <td>Istirahat</td>
+            <td>Semua Peserta</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>13.00 - 15.00</td>
+            <td>Pemilahan Sampah & Dokumentasi</td>
+            <td>Tim Dokumentasi</td>
+        </tr>
+    </table>
+
+</div>
+
+</body>
+</html>
